@@ -1,22 +1,22 @@
 <template>
     <lightning-card title="GROCERIES">
         <lightning-layout>
-            <div ondragover={allowDrop} ondrop={drop}>
-                <div >To Buy</div> <br/>
-                <div>
-                    <div id="FirstItem" draggable="true" ondragstart={dragStart}>TEST1</div>
-                    <div id="SecondItem" draggable="true" ondragstart={dragStart}>TEST2</div>
-                    <div id="ThirdItem" draggable="true" ondragstart={dragStart}>TEST3</div>
-                    <div id="FourthItem" draggable="true" ondragstart={dragStart}>TEST4</div>
-                    <div id="FifthItem" draggable="true" ondragstart={dragStart}>TEST5</div>
-                    <div id="SixthItem" draggable="true" ondragstart={dragStart}>TEST6</div>
-                    <div id="SeventhItem" draggable="true" ondragstart={dragStart}>TEST7</div>
-                    <div id="EighthItem" draggable="true" ondragstart={dragStart}>TEST8</div>
+            <div>
+                <div class="subtitle" >To Buy</div> <br/>
+                <div class="show-in-row" ondragover={allowDrop} ondrop={dropFirst}>
+                    <div class="draggable-style-first-container" id="FirstItem" draggable="true" ondragstart={dragStart}>TEST1</div>
+                    <div class="draggable-style-first-container" id="SecondItem" draggable="true" ondragstart={dragStart}>TEST2</div>
+                    <div class="draggable-style-first-container" id="ThirdItem" draggable="true" ondragstart={dragStart}>TEST3</div>
+                    <div class="draggable-style-first-container" id="FourthItem" draggable="true" ondragstart={dragStart}>TEST4</div>
+                    <div class="draggable-style-first-container" id="FifthItem" draggable="true" ondragstart={dragStart}>TEST5</div>
+                    <div class="draggable-style-first-container" id="SixthItem" draggable="true" ondragstart={dragStart}>TEST6</div>
+                    <div class="draggable-style-first-container" id="SeventhItem" draggable="true" ondragstart={dragStart}>TEST7</div>
+                    <div class="draggable-style-first-container" id="EighthItem" draggable="true" ondragstart={dragStart}>TEST8</div>
                 </div>
                 <hr></hr>
-                <div>Bought</div> <br/>
-                <div ondragover={allowDrop} ondrop={drop}>
-                    <div id="ZeroItem" draggable="true" ondragstart={dragStart}>TEST0</div>
+                <div class="subtitle">Bought</div> <br/>
+                <div class="show-in-row" ondragover={allowDrop} ondrop={dropSecond}>
+                    <div class="draggable-style-second-container" id="ZeroItem" draggable="true" ondragstart={dragStart}>TEST0</div>
                 </div>
             </div>
         </lightning-layout>

@@ -1,3 +1,31 @@
-.draggable_style{
-    
+.subtitle{
+    font-family: 'Aclonica';
+    font-size: 18px;
+    text-align: center;
+}
+.draggable-style-first-container{
+    font-size: 12px;
+    border: 2px solid;
+    border-radius: 4px;
+    background-color:#FCAE9D;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    min-height: 25px;
+}
+.draggable-style-second-container{
+    font-size: 12px;
+    border: 2px solid;
+    border-radius: 4px;
+    background-color:#a1ec90;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    min-height: 25px;
+}
+.show-in-row {
+    display: flex;
+    flex-flow: row wrap;
+    width: 500px;
+    min-height: 25px;
 }

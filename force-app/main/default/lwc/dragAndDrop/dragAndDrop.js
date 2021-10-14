@@ -9,10 +9,21 @@ export default class DragAndDrop extends LightningElement {
         event.preventDefault();
     }
     
-    drop(event){
+    dropFirst(event){
         event.preventDefault();
         let elementId = event.dataTransfer.getData("elementId");
         let draggedElement = this.template.querySelector('#' + elementId);
+        draggedElement.classList.remove('draggable-style-second-container');
+        draggedElement.classList.add('draggable-style-first-container'); 
+        event.target.appendChild(draggedElement);
+    }
+
+    dropSecond(event){
+        event.preventDefault();
+        let elementId = event.dataTransfer.getData("elementId");
+        let draggedElement = this.template.querySelector('#' + elementId);
+        draggedElement.classList.remove('draggable-style-first-container');
+        draggedElement.classList.add('draggable-style-second-container'); 
         event.target.appendChild(draggedElement);
     }
 } 
