@@ -8,7 +8,7 @@
                         <template for:each={accounts} for:item="acc">
                             <lightning-layout key={acc.Id}>
                                 <div id={acc.ShortName__c} draggable="true" ondragstart={dragStart} class="draggable-style-first-container">
-                                    {acc.Name} <span id={acc.ShortName__c} class="cross" onclick={removeElement}>&#x2715;</span>
+                                    {acc.Name} <a id={acc.ShortName__c} class="cross" onclick={removeElement}>&#x2715;</a>
                                 </div>
                             </lightning-layout>
                         </template>                        

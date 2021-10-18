@@ -10,7 +10,6 @@
     background-color:#9196e2;
     margin: 5px;
     padding: 5px;
-    text-align: center;
     min-height: 25px;
 }
 .draggable-style-second-container{
@@ -20,7 +19,6 @@
     background-color:#a1ec90;
     margin: 5px;
     padding: 5px;
-    text-align: center;
     min-height: 25px;
 }
 .show-in-row {
@@ -31,8 +29,8 @@
     min-height: 25px;
 }
 .cross {
-    color: #ed4e59;
-    font-size: 9px;
+    color: #ff0011;
+    font-size: 8px;
     font-weight: 900;
     margin-left: 5px;
 }

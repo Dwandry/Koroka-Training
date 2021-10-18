@@ -26,6 +26,7 @@ export default class DragAndDrop extends LightningElement {
     }
     
     dropFirst(event){
+        if(event.target.className == 'show-in-row') {
         event.preventDefault();
         let elementId = event.dataTransfer.getData("elementId");        
         
@@ -34,9 +35,11 @@ export default class DragAndDrop extends LightningElement {
         draggedElement.classList.remove('draggable-style-second-container');
         draggedElement.classList.add('draggable-style-first-container'); 
         event.target.appendChild(draggedElement);
+        }
     }
 
     dropSecond(event){
+        if(event.target.className == 'show-in-row') {
         event.preventDefault();
         let elementId = event.dataTransfer.getData("elementId");
         
@@ -45,11 +48,12 @@ export default class DragAndDrop extends LightningElement {
         draggedElement.classList.remove('draggable-style-first-container');
         draggedElement.classList.add('draggable-style-second-container'); 
         event.target.appendChild(draggedElement);
+        }
     }
     removeElement(event){        
-        let spanId = event.target.id;        
-        let spanElement = this.template.querySelector('#' + spanId);       
-        spanElement.remove();
+        let aId = event.target.id;        
+        let aElement = this.template.querySelector('#' + aId);       
+        aElement.remove();
     }
 } 
 
