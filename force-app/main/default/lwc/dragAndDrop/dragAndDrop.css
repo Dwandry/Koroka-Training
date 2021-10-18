@@ -7,7 +7,7 @@
     font-size: 12px;
     border: 2px solid;
     border-radius: 4px;
-    background-color:#FCAE9D;
+    background-color:#9196e2;
     margin: 5px;
     padding: 5px;
     text-align: center;
@@ -24,6 +24,7 @@
     min-height: 25px;
 }
 .show-in-row {
+    margin-left: 10px;
     display: flex;
     flex-flow: row wrap;
     width: 500px;

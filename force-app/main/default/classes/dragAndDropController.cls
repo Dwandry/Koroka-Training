@@ -1,13 +1,10 @@
-public with sharing class dragAndDropController {
-    @AuraEnabled
-    global static List<String> getValues(){
-        List<String> groceries = new List<String>();
-        groceries.add('Bread');
-        groceries.add('Bread');
-        groceries.add('Bread');
-        groceries.add('Bread');
-        groceries.add('Bread');
-        groceries.add('Bread');
-        groceries.add('Bread');
+public with sharing class dragAndDropController {    
+
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAccounts(){
+        List<Account> accList = [SELECT Id, Name, ShortName__c
+                                  FROM Account
+                                  LIMIT 10];
+        return accList;
     }
 }

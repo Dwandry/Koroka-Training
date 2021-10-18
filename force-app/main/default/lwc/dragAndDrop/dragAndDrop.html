@@ -1,23 +1,20 @@
 <template>
-    <lightning-card title="GROCERIES">
+    <lightning-card title="Account Management">
         <lightning-layout>
             <div>
-                <div class="subtitle" >To Buy</div> <br/>
+                <div class="subtitle" >General</div> <br/>
                 <div class="show-in-row" ondragover={allowDrop} ondrop={dropFirst}>
-                    <div class="draggable-style-first-container" id="FirstItem" draggable="true" ondragstart={dragStart}>TEST1</div>
-                    <div class="draggable-style-first-container" id="SecondItem" draggable="true" ondragstart={dragStart}>TEST2</div>
-                    <div class="draggable-style-first-container" id="ThirdItem" draggable="true" ondragstart={dragStart}>TEST3</div>
-                    <div class="draggable-style-first-container" id="FourthItem" draggable="true" ondragstart={dragStart}>TEST4</div>
-                    <div class="draggable-style-first-container" id="FifthItem" draggable="true" ondragstart={dragStart}>TEST5</div>
-                    <div class="draggable-style-first-container" id="SixthItem" draggable="true" ondragstart={dragStart}>TEST6</div>
-                    <div class="draggable-style-first-container" id="SeventhItem" draggable="true" ondragstart={dragStart}>TEST7</div>
-                    <div class="draggable-style-first-container" id="EighthItem" draggable="true" ondragstart={dragStart}>TEST8</div>
+                    <template if:true={accounts}>
+                        <template for:each={accounts} for:item="acc">
+                            <lightning-layout key={acc.Id}>
+                                <div id={acc.ShortName__c} draggable="true" ondragstart={dragStart} class="draggable-style-first-container">{acc.Name}</div>
+                            </lightning-layout>
+                        </template>                        
+                    </template>
                 </div>
                 <hr></hr>
-                <div class="subtitle">Bought</div> <br/>
-                <div class="show-in-row" ondragover={allowDrop} ondrop={dropSecond}>
-                    <div class="draggable-style-second-container" id="ZeroItem" draggable="true" ondragstart={dragStart}>TEST0</div>
-                </div>
+                <div class="subtitle">Partners</div> <br/>
+                <div class="show-in-row" ondragover={allowDrop} ondrop={dropSecond}></div>
             </div>
         </lightning-layout>
     </lightning-card>
