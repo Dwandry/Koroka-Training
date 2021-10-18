@@ -30,3 +30,9 @@
     width: 500px;
     min-height: 25px;
 }
+.cross {
+    color: #ed4e59;
+    font-size: 9px;
+    font-weight: 900;
+    margin-left: 5px;
+}

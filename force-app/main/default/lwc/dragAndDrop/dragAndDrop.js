@@ -18,9 +18,7 @@ export default class DragAndDrop extends LightningElement {
     }
 
     dragStart(event){
-        event.dataTransfer.setData("elementId", event.target.id);
-        console.log(event.dataTransfer.getData("elementId"));
-        console.log(event.target.id);
+        event.dataTransfer.setData("elementId", event.target.id);        
     }
 
     allowDrop(event){
@@ -29,11 +27,10 @@ export default class DragAndDrop extends LightningElement {
     
     dropFirst(event){
         event.preventDefault();
-        let elementId = event.dataTransfer.getData("elementId");
-        console.log(elementId);
+        let elementId = event.dataTransfer.getData("elementId");        
         
         let draggedElement = this.template.querySelector('#' + elementId);
-        console.log(draggedElement);
+       
         draggedElement.classList.remove('draggable-style-second-container');
         draggedElement.classList.add('draggable-style-first-container'); 
         event.target.appendChild(draggedElement);
@@ -42,12 +39,17 @@ export default class DragAndDrop extends LightningElement {
     dropSecond(event){
         event.preventDefault();
         let elementId = event.dataTransfer.getData("elementId");
-        console.log(elementId);
+        
         let draggedElement = this.template.querySelector('#' + elementId);
-        console.log(draggedElement);
+       
         draggedElement.classList.remove('draggable-style-first-container');
         draggedElement.classList.add('draggable-style-second-container'); 
         event.target.appendChild(draggedElement);
+    }
+    removeElement(event){        
+        let spanId = event.target.id;        
+        let spanElement = this.template.querySelector('#' + spanId);       
+        spanElement.remove();
     }
 } 
 
